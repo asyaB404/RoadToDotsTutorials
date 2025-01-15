@@ -1,5 +1,6 @@
 using Unity.Burst;
 using Unity.Entities;
+using Unity.Transforms;
 
 public partial struct TestSystem:ISystem
 {
@@ -12,9 +13,9 @@ public partial struct TestSystem:ISystem
     [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
-        foreach (var (data, entity) in SystemAPI.Query<RefRW<TestData>>().WithEntityAccess())
+        foreach (var (transform, data) in SystemAPI.Query<RefRW<LocalTransform>,RefRW<TestData>>())
         {
-            data.ValueRW.position += data.ValueRO.direction * data.ValueRO.speed * SystemAPI.Time.DeltaTime;
+            transform.ValueRW.Position += data.ValueRO.direction * data.ValueRO.speed * SystemAPI.Time.DeltaTime;
         }
     }
 

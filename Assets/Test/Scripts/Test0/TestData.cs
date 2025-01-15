@@ -7,5 +7,4 @@ public struct TestData : IComponentData
 {
     public float speed;
     public float3 direction;
-    public float3 position;
 }

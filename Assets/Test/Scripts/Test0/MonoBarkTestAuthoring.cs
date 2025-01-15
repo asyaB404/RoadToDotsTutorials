@@ -6,7 +6,6 @@ class MonoBarkTest : MonoBehaviour
 {
     public float speed = 1;
     public float3 direction = float3.zero;
-    public float3 position = float3.zero;
 }
 
 class MonoBarkTestAuthoring : Baker<MonoBarkTest>
@@ -18,7 +17,6 @@ class MonoBarkTestAuthoring : Baker<MonoBarkTest>
         {
             speed = authoring.speed,
             direction = authoring.direction,
-            position = authoring.position
         });
     }
 }
