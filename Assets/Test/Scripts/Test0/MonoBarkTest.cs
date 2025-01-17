@@ -2,7 +2,7 @@ using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
 
-class MonoBarkTest : MonoBehaviour
+public class MonoBarkTest : MonoBehaviour
 {
     public float speed = 1;
     public float3 direction = float3.zero;
